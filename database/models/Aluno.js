@@ -23,6 +23,5 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true
         //criatedAt e updatedAt
     });
-    
-    return Aluno
+    return Aluno;
 }

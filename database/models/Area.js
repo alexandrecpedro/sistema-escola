@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const areas = sequelize.define('areas', {
+    const Area = sequelize.define('Area', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         tableName: 'areas',
         timestamps: true
-        //criatedAt e updatedAt
+        //createdAt e updatedAt
     });
     
-    return areas
+    return Area
 }
