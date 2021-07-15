@@ -9,16 +9,21 @@ module.exports = (sequelize, DataTypes) => {
         tipo: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        ano_matricula: {
-            type: DataTypes.INTEGER,
-            allowNull: false
         }
     }, {
         tableName: 'areas',
         timestamps: true
         //createdAt e updatedAt
     });
+    Area.associate = (models) => {
+        // 1:N uma área possui muitos cursos
+        Area.hasMany(models.Curso, {
+            // apelido da relação
+            as: 'cursos',
+            // chave estrangeira
+            foreignKey: 'area_id'
+        })
+    }
     
     return Area
 }

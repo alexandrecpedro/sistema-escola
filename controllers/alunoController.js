@@ -3,8 +3,10 @@ const Op = Sequelize.Op;
 
 const alunoController = {
     index: async (req, res) => {
-        console.log(Aluno);
-        const alunos = await Aluno.findAll();
+        // Listando alunos com turmas relacionadas
+        const alunos = await Aluno.findAll({
+            include: ['turmas']
+        });
 
         return res.json(alunos);
     },

@@ -3,7 +3,9 @@ const Op = Sequelize.Op;
 
 const professorController = {
     index: async (req, res) => {
+        // Listando professores com turmas relacionadas
         const professores = await Professor.findAll({
+            include: ['turmas'],
             order: [['nome', 'ASC']]
         });
         return res.json(professores);

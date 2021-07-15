@@ -19,6 +19,13 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true
         //createdAt e updatedAt
     });
+    Professor.associate = (models) => {
+        // 1:N professor tem várias turmas
+        Professor.hasMany(models.Turma, {
+            as: 'turmas',
+            foreignKey: 'professor_id'
+        })
+    }
     
     return Professor
 }

@@ -28,14 +28,14 @@ INSERT INTO `cursos` (nome, area_id) VALUES ('Desenvolvimento Mobile IOS', 1);
 INSERT INTO `cursos` (nome, area_id) VALUES ('Marketing Digital', 2);
 INSERT INTO `cursos` (nome, area_id) VALUES ('Ux', 3);
 
-INSERT INTO `turmas` (id, duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (10, 3, 2020, 2, 1, 3);
-INSERT INTO `turmas` (id, duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (11, 3, 2020, 1, 1, 3);
-INSERT INTO `turmas` (id, duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (12, 5, 2018, 2, 1, 15);
-INSERT INTO `turmas` (id, duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (13, 5, 2019, 1, 1, 15);
-INSERT INTO `turmas` (id, duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (14, 2, 2020, 2, 3, 15);
-INSERT INTO `turmas` (id, duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (15, 5, 2020, 1, 1, 15);
-INSERT INTO `turmas` (id, duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (16, 1, 2020, 1, 5, 15);
-INSERT INTO `turmas` (id, duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (17, 5, 2018, 2, 1, 4);
+INSERT INTO `turmas` (duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (3, 2020, 2, 1, 3);
+INSERT INTO `turmas` (duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (3, 2020, 1, 1, 3);
+INSERT INTO `turmas` (duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (5, 2018, 2, 1, 15);
+INSERT INTO `turmas` (duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (5, 2019, 1, 1, 15);
+INSERT INTO `turmas` (duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (2, 2020, 2, 3, 15);
+INSERT INTO `turmas` (duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (5, 2020, 1, 1, 15);
+INSERT INTO `turmas` (duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (1, 2020, 1, 5, 15);
+INSERT INTO `turmas` (duracao, ano_inicio, semestre, curso_id, professor_id) VALUES (5, 2018, 2, 1, 4);
 
 INSERT INTO `alunos_has_turmas` (aluno_id, turma_id, numero_faltas) VALUES (1, 10, 5);
 INSERT INTO `alunos_has_turmas` (aluno_id, turma_id, numero_faltas) VALUES (1, 11, 7);

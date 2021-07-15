@@ -1,13 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
     const Turma = sequelize.define('Turma', {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER(10),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
         duracao: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER(10),
             allowNull: false
         },
         ano_inicio: {
@@ -33,6 +33,26 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true
         //createdAt e updatedAt
     });
-    
+    Turma.associate = (models) => {
+        // N:1 várias turmas pertencem a 1 curso
+        Turma.belongsTo(models.Curso, {
+            as: 'curso',
+            foreignKey: 'curso_id'
+        })
+        // N:1 várias turmas pertencem a 1 professor
+        Turma.belongsTo(models.Professor, {
+            as: 'professor',
+            foreignKey: 'professor_id'
+        })
+        // N:M uma turma possui vários alunos
+        Turma.belongsToMany(models.Aluno, {
+            as: 'alunos',
+            through: 'alunos_has_turmas',
+            foreignKey: 'turma_id',
+            otherKey: 'aluno_id',
+            timestamps: true
+        })
+    }
+
     return Turma
 }
