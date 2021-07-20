@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
         nome: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        area_id: {
+            type: DataTypes.INTEGER,
+            foreignKey: true,
+            allowNull: false
         }
     }, {
         tableName: 'cursos',
